@@ -22,7 +22,7 @@ echo "Creating the source package for oh-my-posh ${oh_my_posh_VERSION}-${BUILD_V
 # archive download is byte-identical next time. Reuse the earlier release's copy.
 if [ ! -f "$ORIG_TARBALL" ]; then
     for ((b = BUILD_VERSION - 1; b >= 1; b--)); do
-        if wget -q "https://github.com/dariogriffo/oh-my-posh-debian/releases/download/${oh_my_posh_VERSION}%2B${b}/${ORIG_TARBALL}" -O "$ORIG_TARBALL"; then
+        if wget -q "https://github.com/gaofengnan/oh-my-posh-debian/releases/download/${oh_my_posh_VERSION}%2B${b}/${ORIG_TARBALL}" -O "$ORIG_TARBALL"; then
             echo "  Reusing $ORIG_TARBALL from release ${oh_my_posh_VERSION}+${b}"
             break
         fi
@@ -40,7 +40,7 @@ else
 fi
 
 build_source_package() {
-    local FULL_VERSION="${oh_my_posh_VERSION}-${BUILD_VERSION}~griffo"
+    local FULL_VERSION="${oh_my_posh_VERSION}-${BUILD_VERSION}~gaofn"
 
     echo "  Building source package ${FULL_VERSION}..."
 
@@ -58,7 +58,7 @@ oh-my-posh (${FULL_VERSION}) stable; urgency=medium
 
   * New upstream release ${oh_my_posh_VERSION}.
 
- -- Dario Griffo <dariogriffo@gmail.com>  $(date -R)
+ -- Fengnan Gao <gao.fengnan@gmail.com>  $(date -R)
 EOF
 
     # Build source package (.dsc + .debian.tar.xz); reuses existing .orig.tar.gz

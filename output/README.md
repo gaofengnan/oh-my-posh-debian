@@ -1,5 +1,7 @@
 # oh-my-posh
 
+> Fork of [dariogriffo/oh-my-posh-debian](https://github.com/dariogriffo/oh-my-posh-debian) (MIT); the original packaging is by Dario Griffo. Served at [deb.gaofn.xyz](https://deb.gaofn.xyz) for Debian 12 (bookworm) and 13 (trixie).
+
 A prompt theme engine for any shell — bash, zsh, fish, PowerShell, and more.
 
 This package installs the `oh-my-posh` binary and every built-in theme under
@@ -11,5 +13,5 @@ eval "$(oh-my-posh init bash --config /usr/share/oh-my-posh/themes/jandedobbelee
 
 - Upstream: https://github.com/JanDeDobbeleer/oh-my-posh
 - Documentation: https://ohmyposh.dev
-- Packaging: https://github.com/dariogriffo/oh-my-posh-debian
-- Repository: https://deb.griffo.io
+- Packaging: https://github.com/gaofengnan/oh-my-posh-debian
+- Repository: https://deb.gaofn.xyz

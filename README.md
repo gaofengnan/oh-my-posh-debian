@@ -1,25 +1,23 @@
 # oh-my-posh-debian
 
+> Fork of [dariogriffo/oh-my-posh-debian](https://github.com/dariogriffo/oh-my-posh-debian) (MIT); the original packaging is by Dario Griffo. Served at [deb.gaofn.xyz](https://deb.gaofn.xyz) for Debian 12 (bookworm) and 13 (trixie).
+
 Debian and Ubuntu packaging for [oh-my-posh](https://ohmyposh.dev) — a prompt
 theme engine for any shell. Each package ships the `oh-my-posh` binary **and
 every built-in theme** under `/usr/share/oh-my-posh/themes/`.
 
 Packages are built automatically from official upstream releases (usually
-within hours) and served from **[deb.griffo.io](https://deb.griffo.io)** for
+within hours) and served from **[deb.gaofn.xyz](https://deb.gaofn.xyz)** for
 Debian (bookworm, trixie, forky, sid) and Ubuntu (jammy, noble, questing,
 resolute) on amd64, arm64 and armhf.
 
 ## Install
 
-> ⚠️ **apt access requires a yearly subscription**
-> ([deb.griffo.io](https://deb.griffo.io)). To use this tool for free, download
-> the .deb from the [Releases](https://github.com/dariogriffo/oh-my-posh-debian/releases) page
-> and install it manually (see below).
-
 ```bash
 sudo install -d -m 0755 /etc/apt/keyrings
-curl -fsSL https://deb.griffo.io/EA0F721D231FDD3A0A17B9AC7808B4DD62C41256.asc | sudo gpg --dearmor --yes -o /etc/apt/keyrings/deb.griffo.io.gpg
-echo "deb [signed-by=/etc/apt/keyrings/deb.griffo.io.gpg] https://deb.griffo.io/apt $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/deb.griffo.io.list > /dev/null
+sudo curl -fsSL https://deb.gaofn.xyz/deb.gaofn.xyz.gpg -o /etc/apt/keyrings/deb.gaofn.xyz.gpg
+sudo curl -fsSL https://deb.gaofn.xyz/deb.gaofn.xyz.sources -o /etc/apt/sources.list.d/deb.gaofn.xyz.sources
+# Debian 12 (bookworm): fetch deb.gaofn.xyz-bookworm.sources instead
 sudo apt update
 sudo apt install -y oh-my-posh
 ```
@@ -33,7 +31,7 @@ eval "$(oh-my-posh init bash --config /usr/share/oh-my-posh/themes/jandedobbelee
 ### Manual Installation
 
 1. Download the .deb package for your Debian version available on
-   the [Releases](https://github.com/dariogriffo/oh-my-posh-debian/releases) page.
+   the [Releases](https://github.com/gaofengnan/oh-my-posh-debian/releases) page.
 2. Install the downloaded .deb package.
 
 ```sh
@@ -47,12 +45,11 @@ sudo dpkg -i <filename>.deb
   themes from the upstream release assets) and source packages (`.dsc`, from the
   upstream source tarball), then publishes everything as a GitHub release tagged
   `<version>+<build>`.
-- The deb.griffo.io mirror ingests published releases automatically.
+- The deb.gaofn.xyz mirror ingests published releases automatically.
 
 Manual build: `./build.sh <version> <build> [arch|all]` (e.g. `./build.sh 29.28.0 1 all`).
 
 ## Links
 
 - Upstream: https://github.com/JanDeDobbeleer/oh-my-posh
-- Site page: https://deb.griffo.io/install-latest-oh-my-posh-in-debian.html
-- Repository: https://deb.griffo.io
+- Repository: https://deb.gaofn.xyz

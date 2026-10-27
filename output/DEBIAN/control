@@ -1,8 +1,8 @@
 Section: utils
 Priority: optional
-Maintainer: Dario Griffo <dariogriffo@gmail.com>
+Maintainer: Fengnan Gao <gao.fengnan@gmail.com>
 Homepage: https://ohmyposh.dev
 Package: oh-my-posh
-Version: oh_my_posh_VERSION-BUILD_VERSION~griffo
+Version: oh_my_posh_VERSION-BUILD_VERSION~gaofn
 Architecture: SUPPORTED_ARCHITECTURES
 Description: A prompt theme engine for any shell, with all built-in themes included.
